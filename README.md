@@ -1,2 +1,2 @@
-# RocketBoost
+# Rocket Boost
 Rocket Boost
