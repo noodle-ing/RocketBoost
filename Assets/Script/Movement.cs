@@ -18,6 +18,9 @@ public class Movement : MonoBehaviour
     [SerializeField]  
     InputAction rotation;
 
+    [SerializeField] 
+    float rotatevelocity = 50f;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -46,6 +49,19 @@ public class Movement : MonoBehaviour
     void  ProcessRotation()
     {
         float rotationInput = rotation.ReadValue<float>();
-        Debug.Log($"this is value{rotationInput}");
+        if (rotationInput < 0)
+        {
+            ApplyRotation(-1);
+        }
+        else if (rotationInput > 0)
+        {
+            ApplyRotation(1);        
+        }
     }
+    
+    void ApplyRotation(int rotationThisFrame)
+    {
+        transform.Rotate(-Vector3.forward * rotatevelocity * Time.fixedDeltaTime * rotationThisFrame);
+    }
+    
 }
