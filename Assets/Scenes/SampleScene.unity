@@ -483,6 +483,39 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
   trustStrenght: 1000
+  rotation:
+    m_Name: Rotation
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 13fcbd59-0f5b-4a1d-829d-4c886a924239
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 1D Axis
+      m_Id: 3f1ed558-cc0c-432a-a817-3130c5a8a4ea
+      m_Path: 1DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Rotation
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: 607830e5-a6a5-407f-a913-807a69b354e0
+      m_Path: <Keyboard>/a
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Rotation
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: 4979f1e6-849c-4419-ab63-ee03f6c4d218
+      m_Path: <Keyboard>/d
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Rotation
+      m_Flags: 8
+    m_Flags: 0
 --- !u!4 &1185385677
 Transform:
   m_ObjectHideFlags: 0
@@ -492,7 +525,7 @@ Transform:
   m_GameObject: {fileID: 1185385675}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.08, y: 0, z: -0.16}
+  m_LocalPosition: {x: 0.028634071, y: 0.010760069, z: -0.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

@@ -9,26 +9,43 @@ public class Movement : MonoBehaviour
 {
     [SerializeField] 
     InputAction thrust;
+    
     Rigidbody rb;
+    
     [SerializeField] 
-    float trustStrenght = 0f;
+    float trustStrenght = 10f;
 
+    [SerializeField]  
+    InputAction rotation;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
-
+    
     private void OnEnable()
     {
         thrust.Enable();
+        rotation.Enable(); 
     }
 
     private void FixedUpdate()
+    {
+        ProcessThrust();
+        ProcessRotation();
+    }
+    
+    private void ProcessThrust()
     {
         if (thrust.IsPressed())
         {
             rb.AddRelativeForce(Vector3.up * trustStrenght * Time.fixedDeltaTime);
         }
+    }
+    
+    void  ProcessRotation()
+    {
+        float rotationInput = rotation.ReadValue<float>();
+        Debug.Log($"this is value{rotationInput}");
     }
 }
