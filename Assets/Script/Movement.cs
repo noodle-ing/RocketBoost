@@ -20,10 +20,13 @@ public class Movement : MonoBehaviour
 
     [SerializeField] 
     float rotatevelocity =30f;
-
+    
+    AudioSource flyAudio;
+    
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        flyAudio = GetComponent<AudioSource>(); 
     }
     
     private void OnEnable()
@@ -40,11 +43,22 @@ public class Movement : MonoBehaviour
     
     private void ProcessThrust()
     {
+       
         if (thrust.IsPressed())
         {
             rb.AddRelativeForce(Vector3.up * trustStrenght * Time.fixedDeltaTime);
+            if (!flyAudio.isPlaying)
+            {
+                flyAudio.Play();
+            }
+            
+        }
+        else
+        {
+            flyAudio.Stop();
         }
     }
+    
     
     void  ProcessRotation()
     {
