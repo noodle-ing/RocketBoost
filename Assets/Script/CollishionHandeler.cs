@@ -17,9 +17,15 @@ namespace UnityEngine.SceneManagement
                     Debug.Log("circke");
                     break;
                 default:
-                    SceneManager.LoadScene("SampleScene");
+                    ReloadLevel();
                     break;
             }
+        }
+
+        void ReloadLevel()
+        {
+            int curentScene = SceneManager.GetActiveScene().buildIndex;
+            SceneManager.LoadScene(curentScene);
         }
     }
 }
