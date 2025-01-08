@@ -19,7 +19,7 @@ public class Movement : MonoBehaviour
     InputAction rotation;
 
     [SerializeField] 
-    float rotatevelocity = 50f;
+    float rotatevelocity =30f;
 
     private void Start()
     {
@@ -51,17 +51,16 @@ public class Movement : MonoBehaviour
         float rotationInput = rotation.ReadValue<float>();
         if (rotationInput < 0)
         {
-            ApplyRotation(-1);
+            ApplyRotation(rotatevelocity);
         }
         else if (rotationInput > 0)
         {
-            ApplyRotation(1);        
+            ApplyRotation(-rotatevelocity);        
         }
     }
     
-    void ApplyRotation(int rotationThisFrame)
+    void ApplyRotation(float rotationThisFrame)
     {
-        transform.Rotate(-Vector3.forward * rotatevelocity * Time.fixedDeltaTime * rotationThisFrame);
+        transform.Rotate(Vector3.forward  * Time.fixedDeltaTime * rotationThisFrame);
     }
-    
 }
