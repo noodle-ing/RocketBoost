@@ -51,7 +51,6 @@ public class Movement : MonoBehaviour
             {
                 flyAudio.Play();
             }
-            
         }
         else
         {
