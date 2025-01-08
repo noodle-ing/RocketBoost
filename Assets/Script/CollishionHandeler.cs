@@ -1,24 +1,27 @@
 using System;
 using UnityEngine;
 
-public class CollishionHandeler : MonoBehaviour
+namespace UnityEngine.SceneManagement
 {
-    private void OnCollisionEnter(Collision other)
+    public class CollishionHandeler : MonoBehaviour
     {
-        switch (other.gameObject.tag)
+        private void OnCollisionEnter(Collision other)
         {
-            case "Frendly":
-                break;
-            case "Finish":
-                break;
-            case "Fuel":
-                Debug.Log("circke");
-                break;
-            default:
-                Debug.Log("you crashed");
-                break;
+            switch (other.gameObject.tag)
+            {
+                case "Frendly":
+                    break;
+                case "Finish":
+                    break;
+                case "Fuel":
+                    Debug.Log("circke");
+                    break;
+                default:
+                    SceneManager.LoadScene("SampleScene");
+                    break;
+            }
         }
-
-       
     }
 }
+
+
