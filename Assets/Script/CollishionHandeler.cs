@@ -5,15 +5,36 @@ namespace UnityEngine.SceneManagement
 {
     public class CollishionHandeler : MonoBehaviour
     {
-        [SerializeField]
+        
+        
+        [SerializeField] 
+        AudioClip crashAudio;
+        
+        [SerializeField] 
+        AudioClip successAudio;
+        
+        AudioSource crashAudioSource;
+        AudioSource successAudioSource;
+
+        bool isContrilable = true;
+
+        
+        private void Start()
+        {
+            crashAudioSource = GetComponent<AudioSource>();
+            successAudioSource = GetComponent<AudioSource>();
+        }
         private void OnCollisionEnter(Collision other)
         {
+            if (!isContrilable)
+                return;
+            
             switch (other.gameObject.tag)
             {
                 case "Frendly":
                     break;
                 case "Finish":
-                    DelayBeforeNextLvl(0.4f);
+                    DelayBeforeNextLvl(1f);
                     break;
                 default:
                     StartCrashSequence();
@@ -37,16 +58,27 @@ namespace UnityEngine.SceneManagement
             }
             SceneManager.LoadScene(nextScene);
         }
-
+ 
         void StartCrashSequence()
         {
-            GetComponent<Movement>().enabled = false;
+            isContrilable = false;
+            successAudioSource.Stop();
+            crashAudioSource.PlayOneShot(crashAudio);
+            StopControl(isContrilable);
             Invoke("ReloadLevel", 0.4f);
         }
         void DelayBeforeNextLvl(float deleyTime)
         {
-            GetComponent<Movement>().enabled = false;
+            isContrilable = false;
+            crashAudioSource.Stop();
+            successAudioSource.PlayOneShot(successAudio);
+            StopControl(isContrilable);
             Invoke("LoadNextLevel", deleyTime);
+        }
+
+        void StopControl(bool canControll)
+        {
+            GetComponent<Movement>().enabled = canControll;
         }
     }
 }

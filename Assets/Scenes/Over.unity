@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: f2a8b7f76f1a28948a31d63ce8fc189f, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -759,16 +759,16 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 56cfdd93f005c2e4ca8cf98ecb1fedb2, type: 3}
-  m_Resource: {fileID: 8300000, guid: 56cfdd93f005c2e4ca8cf98ecb1fedb2, type: 3}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.651
   m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 127
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -858,6 +858,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da51cd8e3dcd7634aab6e48bd0069d9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  crashAudio: {fileID: 8300000, guid: 6a560835d97f7ea4997a0117cde219a2, type: 3}
+  successAudio: {fileID: 8300000, guid: 59d1222753b7a1d418662b5f3ac12ed8, type: 3}
 --- !u!1001 &1008152120038007211
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -914,6 +916,10 @@ PrefabInstance:
       propertyPath: flyAudio
       value: 
       objectReference: {fileID: 1999373794}
+    - target: {fileID: 1893707309529394329, guid: a1717f670b6a16249b64f1fa367220cb, type: 3}
+      propertyPath: mainEngine
+      value: 
+      objectReference: {fileID: 8300000, guid: 56cfdd93f005c2e4ca8cf98ecb1fedb2, type: 3}
     - target: {fileID: 1893707309529394329, guid: a1717f670b6a16249b64f1fa367220cb, type: 3}
       propertyPath: rotatevelocity
       value: 30

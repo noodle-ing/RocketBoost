@@ -20,6 +20,9 @@ public class Movement : MonoBehaviour
 
     [SerializeField] 
     float rotatevelocity =30f;
+
+    [SerializeField] 
+    AudioClip mainEngine;
     
     AudioSource flyAudio;
     
@@ -49,7 +52,7 @@ public class Movement : MonoBehaviour
             rb.AddRelativeForce(Vector3.up * trustStrenght * Time.fixedDeltaTime);
             if (!flyAudio.isPlaying)
             {
-                flyAudio.Play();
+                flyAudio.PlayOneShot(mainEngine);
             }
         }
         else

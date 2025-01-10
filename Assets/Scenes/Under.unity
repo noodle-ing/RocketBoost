@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: f2a8b7f76f1a28948a31d63ce8fc189f, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -148,7 +148,7 @@ Light:
   serializedVersion: 11
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2
+  m_Intensity: 0.48
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -191,7 +191,7 @@ Light:
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_ColorTemperature: 5000
+  m_ColorTemperature: 6579
   m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
@@ -966,6 +966,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da51cd8e3dcd7634aab6e48bd0069d9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  crashAudio: {fileID: 8300000, guid: 6a560835d97f7ea4997a0117cde219a2, type: 3}
+  successAudio: {fileID: 8300000, guid: 59d1222753b7a1d418662b5f3ac12ed8, type: 3}
 --- !u!1001 &1008152120038007211
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1023,8 +1025,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1999373794}
     - target: {fileID: 1893707309529394329, guid: a1717f670b6a16249b64f1fa367220cb, type: 3}
+      propertyPath: mainEngine
+      value: 
+      objectReference: {fileID: 8300000, guid: 56cfdd93f005c2e4ca8cf98ecb1fedb2, type: 3}
+    - target: {fileID: 1893707309529394329, guid: a1717f670b6a16249b64f1fa367220cb, type: 3}
+      propertyPath: trustStrenght
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893707309529394329, guid: a1717f670b6a16249b64f1fa367220cb, type: 3}
       propertyPath: rotatevelocity
-      value: 30
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1893707309529394329, guid: a1717f670b6a16249b64f1fa367220cb, type: 3}
       propertyPath: rotation.m_SingletonActionBindings.Array.size
