@@ -12,6 +12,11 @@ namespace UnityEngine.SceneManagement
         
         [SerializeField] 
         AudioClip successAudio;
+
+        [SerializeField] 
+        ParticleSystem successParticle;
+        [SerializeField] 
+        ParticleSystem crashParticle;
         
         AudioSource crashAudioSource;
         AudioSource successAudioSource;
@@ -64,6 +69,7 @@ namespace UnityEngine.SceneManagement
             isContrilable = false;
             successAudioSource.Stop();
             crashAudioSource.PlayOneShot(crashAudio);
+            crashParticle.Play();
             StopControl(isContrilable);
             Invoke("ReloadLevel", 0.4f);
         }
@@ -71,6 +77,7 @@ namespace UnityEngine.SceneManagement
         {
             isContrilable = false;
             crashAudioSource.Stop();
+            successParticle.Play();
             successAudioSource.PlayOneShot(successAudio);
             StopControl(isContrilable);
             Invoke("LoadNextLevel", deleyTime);

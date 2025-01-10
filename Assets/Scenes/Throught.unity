@@ -1025,6 +1025,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crashAudio: {fileID: 8300000, guid: 6a560835d97f7ea4997a0117cde219a2, type: 3}
   successAudio: {fileID: 8300000, guid: 59d1222753b7a1d418662b5f3ac12ed8, type: 3}
+  successParticle: {fileID: 1008152120038007213}
+  crashParticle: {fileID: 1008152120038007212}
 --- !u!1001 &1008152120038007211
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1148,6 +1150,16 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1999373795}
   m_SourcePrefab: {fileID: 100100000, guid: a1717f670b6a16249b64f1fa367220cb, type: 3}
+--- !u!198 &1008152120038007212 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2500147290065672651, guid: a1717f670b6a16249b64f1fa367220cb, type: 3}
+  m_PrefabInstance: {fileID: 1008152120038007211}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1008152120038007213 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7148859283222287834, guid: a1717f670b6a16249b64f1fa367220cb, type: 3}
+  m_PrefabInstance: {fileID: 1008152120038007211}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2127782689462300450
 PrefabInstance:
   m_ObjectHideFlags: 0
