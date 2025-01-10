@@ -9,7 +9,6 @@ namespace UnityEngine.SceneManagement
         
         [SerializeField] 
         AudioClip crashAudio;
-        
         [SerializeField] 
         AudioClip successAudio;
 
@@ -17,6 +16,8 @@ namespace UnityEngine.SceneManagement
         ParticleSystem successParticle;
         [SerializeField] 
         ParticleSystem crashParticle;
+        
+        
         
         AudioSource crashAudioSource;
         AudioSource successAudioSource;

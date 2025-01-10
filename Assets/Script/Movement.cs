@@ -3,6 +3,7 @@ using System.Numerics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.PlayerLoop;
+using UnityEngine.Serialization;
 using Vector3 = UnityEngine.Vector3;
 
 public class Movement : MonoBehaviour
@@ -20,6 +21,13 @@ public class Movement : MonoBehaviour
 
     [SerializeField] 
     float rotatevelocity =30f;
+    
+    [SerializeField] 
+    ParticleSystem mainBoosterParticle;
+    [FormerlySerializedAs("LeftBoosterParticle")] [SerializeField] 
+    ParticleSystem leftBoosterParticle;
+    [FormerlySerializedAs("RightBoosterParticle")] [SerializeField] 
+    ParticleSystem rightBoosterParticle;
 
     [SerializeField] 
     AudioClip mainEngine;
@@ -54,10 +62,15 @@ public class Movement : MonoBehaviour
             {
                 flyAudio.PlayOneShot(mainEngine);
             }
+            if (!mainBoosterParticle.isPlaying)
+            {
+                mainBoosterParticle.Play();
+            }
         }
         else
         {
             flyAudio.Stop();
+            mainBoosterParticle.Stop();
         }
     }
     
@@ -68,10 +81,24 @@ public class Movement : MonoBehaviour
         if (rotationInput < 0)
         {
             ApplyRotation(rotatevelocity);
+            if (!leftBoosterParticle.isPlaying)
+            {
+                leftBoosterParticle.Play();
+            }
+            
         }
         else if (rotationInput > 0)
         {
             ApplyRotation(-rotatevelocity);        
+            if (!rightBoosterParticle.isPlaying)
+            {
+                rightBoosterParticle.Play();
+            }
+        }
+        else
+        {
+            rightBoosterParticle.Stop();
+            leftBoosterParticle.Stop();
         }
     }
     
