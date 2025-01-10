@@ -5,6 +5,8 @@ namespace UnityEngine.SceneManagement
 {
     public class CollishionHandeler : MonoBehaviour
     {
+        [SerializeField]
+        float deleyTime = 2f;
         private void OnCollisionEnter(Collision other)
         {
             switch (other.gameObject.tag)
@@ -12,10 +14,11 @@ namespace UnityEngine.SceneManagement
                 case "Frendly":
                     break;
                 case "Finish":
+                    DelayBeforeNextLvl();
                     LoadNextLevel();
                     break;
                 default:
-                    ReloadLevel();
+                    StartCrashSequence();
                     break;
             }
         }
@@ -35,6 +38,17 @@ namespace UnityEngine.SceneManagement
                 nextScene = 0;
             }
             SceneManager.LoadScene(nextScene);
+        }
+
+        void StartCrashSequence()
+        {
+            GetComponent<Movement>().enabled = false;
+            Invoke("ReloadLevel", 1.5f);
+        }
+        void DelayBeforeNextLvl()
+        {
+            GetComponent<Movement>().enabled = false;
+            Invoke("LoadNextLevel", deleyTime);
         }
     }
 }
