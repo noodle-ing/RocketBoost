@@ -12,9 +12,7 @@ namespace UnityEngine.SceneManagement
                 case "Frendly":
                     break;
                 case "Finish":
-                    break;
-                case "Fuel":
-                    Debug.Log("circke");
+                    LoadNextLevel();
                     break;
                 default:
                     ReloadLevel();
@@ -26,6 +24,17 @@ namespace UnityEngine.SceneManagement
         {
             int curentScene = SceneManager.GetActiveScene().buildIndex;
             SceneManager.LoadScene(curentScene);
+        }
+
+        void LoadNextLevel()
+        {
+            int curentScene = SceneManager.GetActiveScene().buildIndex;
+            int nextScene = curentScene + 1;
+            if (nextScene == SceneManager.sceneCountInBuildSettings) 
+            {
+                nextScene = 0;
+            }
+            SceneManager.LoadScene(nextScene);
         }
     }
 }
