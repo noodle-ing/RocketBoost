@@ -6,7 +6,6 @@ namespace UnityEngine.SceneManagement
     public class CollishionHandeler : MonoBehaviour
     {
         [SerializeField]
-        float deleyTime = 2f;
         private void OnCollisionEnter(Collision other)
         {
             switch (other.gameObject.tag)
@@ -14,8 +13,7 @@ namespace UnityEngine.SceneManagement
                 case "Frendly":
                     break;
                 case "Finish":
-                    DelayBeforeNextLvl();
-                    LoadNextLevel();
+                    DelayBeforeNextLvl(0.4f);
                     break;
                 default:
                     StartCrashSequence();
@@ -43,9 +41,9 @@ namespace UnityEngine.SceneManagement
         void StartCrashSequence()
         {
             GetComponent<Movement>().enabled = false;
-            Invoke("ReloadLevel", 1.5f);
+            Invoke("ReloadLevel", 0.4f);
         }
-        void DelayBeforeNextLvl()
+        void DelayBeforeNextLvl(float deleyTime)
         {
             GetComponent<Movement>().enabled = false;
             Invoke("LoadNextLevel", deleyTime);
