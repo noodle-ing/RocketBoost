@@ -54,52 +54,20 @@ public class Movement : MonoBehaviour
     
     private void ProcessThrust()
     {
-       
         if (thrust.IsPressed())
         {
-            rb.AddRelativeForce(Vector3.up * trustStrenght * Time.fixedDeltaTime);
-            if (!flyAudio.isPlaying)
-            {
-                flyAudio.PlayOneShot(mainEngine);
-            }
-            if (!mainBoosterParticle.isPlaying)
-            {
-                mainBoosterParticle.Play();
-            }
+            Thrust();
         }
         else
         {
-            flyAudio.Stop();
-            mainBoosterParticle.Stop();
+            StopThrust();
         }
     }
     
     
     void  ProcessRotation()
     {
-        float rotationInput = rotation.ReadValue<float>();
-        if (rotationInput < 0)
-        {
-            ApplyRotation(rotatevelocity);
-            if (!leftBoosterParticle.isPlaying)
-            {
-                leftBoosterParticle.Play();
-            }
-            
-        }
-        else if (rotationInput > 0)
-        {
-            ApplyRotation(-rotatevelocity);        
-            if (!rightBoosterParticle.isPlaying)
-            {
-                rightBoosterParticle.Play();
-            }
-        }
-        else
-        {
-            rightBoosterParticle.Stop();
-            leftBoosterParticle.Stop();
-        }
+        Rotation();
     }
     
     void ApplyRotation(float rotationThisFrame)
@@ -107,5 +75,65 @@ public class Movement : MonoBehaviour
         rb.freezeRotation = false;
         transform.Rotate(Vector3.forward  * Time.fixedDeltaTime * rotationThisFrame);
         rb.freezeRotation = true;
+    }
+
+    void Thrust()
+    {
+        rb.AddRelativeForce(Vector3.up * trustStrenght * Time.fixedDeltaTime);
+        if (!flyAudio.isPlaying)
+        {
+            flyAudio.PlayOneShot(mainEngine);
+        }
+        if (!mainBoosterParticle.isPlaying)
+        {
+            mainBoosterParticle.Play();
+        }
+    }
+
+    void StopThrust()
+    {
+        flyAudio.Stop();
+        mainBoosterParticle.Stop();
+    }
+
+    void Rotation()
+    {
+        float rotationInput = rotation.ReadValue<float>();
+        if (rotationInput < 0)
+        {
+            LeftRotation();
+        }
+        else if (rotationInput > 0)
+        {
+            RightRotation();
+        }
+        else
+        {
+            StopRotation();
+        }
+    }
+
+    void StopRotation()
+    {
+        rightBoosterParticle.Stop();
+        leftBoosterParticle.Stop();
+    }
+
+    void RightRotation()
+    {
+        ApplyRotation(-rotatevelocity);        
+        if (!rightBoosterParticle.isPlaying)
+        {
+            rightBoosterParticle.Play();
+        }
+    } 
+    
+    void LeftRotation()
+    {
+        ApplyRotation(rotatevelocity);
+        if (!leftBoosterParticle.isPlaying)
+        {
+            leftBoosterParticle.Play();
+        }
     }
 }
