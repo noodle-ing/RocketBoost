@@ -14,19 +14,21 @@ public class Movement : MonoBehaviour
     Rigidbody rb;
     
     [SerializeField] 
-    float trustStrenght = 10f;
+    float trustStrenght ;
 
     [SerializeField]  
     InputAction rotation;
 
     [SerializeField] 
-    float rotatevelocity =30f;
+    float rotatevelocity;
     
     [SerializeField] 
     ParticleSystem mainBoosterParticle;
-    [FormerlySerializedAs("LeftBoosterParticle")] [SerializeField] 
+    [FormerlySerializedAs("LeftBoosterParticle")] 
+    [SerializeField] 
     ParticleSystem leftBoosterParticle;
-    [FormerlySerializedAs("RightBoosterParticle")] [SerializeField] 
+    [FormerlySerializedAs("RightBoosterParticle")] 
+    [SerializeField] 
     ParticleSystem rightBoosterParticle;
 
     [SerializeField] 
