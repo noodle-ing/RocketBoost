@@ -6,9 +6,6 @@ namespace UnityEngine.SceneManagement
 {
     public class CollishionHandeler : MonoBehaviour
     {
-        // [SerializeField] 
-        // InputAction passLevels;
-        
         [SerializeField] 
         AudioClip crashAudio;
         [SerializeField] 
@@ -19,12 +16,10 @@ namespace UnityEngine.SceneManagement
         [SerializeField] 
         ParticleSystem crashParticle;
         
-        
         AudioSource crashAudioSource;
         AudioSource successAudioSource;
 
         bool isContrilable = true;
-
         
         private void Start()
         {
