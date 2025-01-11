@@ -966,6 +966,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da51cd8e3dcd7634aab6e48bd0069d9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  passLevels:
+    m_Name: Pass Levels
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 743a7dd1-527e-40f6-94eb-25f51b1164fd
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
   crashAudio: {fileID: 8300000, guid: 6a560835d97f7ea4997a0117cde219a2, type: 3}
   successAudio: {fileID: 8300000, guid: 59d1222753b7a1d418662b5f3ac12ed8, type: 3}
   successParticle: {fileID: 1008152120038007213}
@@ -1074,6 +1083,14 @@ PrefabInstance:
       propertyPath: rotation.m_SingletonActionBindings.Array.data[0].m_Flags
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 2341211868508919825, guid: a1717f670b6a16249b64f1fa367220cb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 2341211868508919825, guid: a1717f670b6a16249b64f1fa367220cb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.36
+      objectReference: {fileID: 0}
     - target: {fileID: 5985676738434657449, guid: a1717f670b6a16249b64f1fa367220cb, type: 3}
       propertyPath: m_Drag
       value: 0
@@ -1085,6 +1102,14 @@ PrefabInstance:
     - target: {fileID: 5985676738434657449, guid: a1717f670b6a16249b64f1fa367220cb, type: 3}
       propertyPath: m_Constraints
       value: 56
+      objectReference: {fileID: 0}
+    - target: {fileID: 7132460762075288999, guid: a1717f670b6a16249b64f1fa367220cb, type: 3}
+      propertyPath: passLevels.m_Name
+      value: Pass Levels
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293855265015999049, guid: a1717f670b6a16249b64f1fa367220cb, type: 3}
+      propertyPath: passLevels.m_Name
+      value: Pass Levels
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

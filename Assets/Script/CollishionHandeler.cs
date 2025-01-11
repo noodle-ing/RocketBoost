@@ -1,11 +1,13 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace UnityEngine.SceneManagement
 {
     public class CollishionHandeler : MonoBehaviour
     {
-        
+        // [SerializeField] 
+        // InputAction passLevels;
         
         [SerializeField] 
         AudioClip crashAudio;
@@ -16,7 +18,6 @@ namespace UnityEngine.SceneManagement
         ParticleSystem successParticle;
         [SerializeField] 
         ParticleSystem crashParticle;
-        
         
         
         AudioSource crashAudioSource;
@@ -30,6 +31,12 @@ namespace UnityEngine.SceneManagement
             crashAudioSource = GetComponent<AudioSource>();
             successAudioSource = GetComponent<AudioSource>();
         }
+
+        private void Update()
+        {
+            RespondToDebugKeys();
+        }
+
         private void OnCollisionEnter(Collision other)
         {
             if (!isContrilable)
@@ -63,13 +70,14 @@ namespace UnityEngine.SceneManagement
                 nextScene = 0;
             }
             SceneManager.LoadScene(nextScene);
+            Debug.Log(curentScene);
         }
  
         void StartCrashSequence()
         {
             isContrilable = false;
             successAudioSource.Stop();
-            crashAudioSource.PlayOneShot(crashAudio);
+            crashAudioSource.PlayOneShot(crashAudio); //comment 
             crashParticle.Play();
             StopControl(isContrilable);
             Invoke("ReloadLevel", 0.4f);
@@ -87,6 +95,18 @@ namespace UnityEngine.SceneManagement
         void StopControl(bool canControll)
         {
             GetComponent<Movement>().enabled = canControll;
+        }
+
+         void RespondToDebugKeys()
+        {   
+            if (Keyboard.current.lKey.wasPressedThisFrame)
+            {
+                LoadNextLevel();
+            }
+            else if (Keyboard.current.cKey.wasPressedThisFrame)
+            {
+                isContrilable = !isContrilable;
+            }
         }
     }
 }

@@ -404,7 +404,7 @@ Transform:
   m_GameObject: {fileID: 828282914}
   serializedVersion: 2
   m_LocalRotation: {x: 0.1591905, y: 0.038271144, z: -0.0063096206, w: 0.98648566}
-  m_LocalPosition: {x: -7.5064754, y: 8.525029, z: -7.934479}
+  m_LocalPosition: {x: -7.5064754, y: 5.305029, z: -7.9344797}
   m_LocalScale: {x: 3.7, y: 1.33, z: 5.03}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -529,7 +529,7 @@ Transform:
   m_GameObject: {fileID: 1550262748}
   serializedVersion: 2
   m_LocalRotation: {x: 0.1591905, y: 0.038271144, z: -0.0063096206, w: 0.98648566}
-  m_LocalPosition: {x: -7.5064754, y: 8.525029, z: -7.934479}
+  m_LocalPosition: {x: -7.5064754, y: 5.305029, z: -7.9344797}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -758,7 +758,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1099768253888147548, guid: a1717f670b6a16249b64f1fa367220cb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.17
+      value: -0.05
       objectReference: {fileID: 0}
     - target: {fileID: 1099768253888147548, guid: a1717f670b6a16249b64f1fa367220cb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -795,6 +795,38 @@ PrefabInstance:
     - target: {fileID: 1728310879192482854, guid: a1717f670b6a16249b64f1fa367220cb, type: 3}
       propertyPath: m_Name
       value: Player Rocket
+      objectReference: {fileID: 0}
+    - target: {fileID: 2341211868508919825, guid: a1717f670b6a16249b64f1fa367220cb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 2341211868508919825, guid: a1717f670b6a16249b64f1fa367220cb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 7132460762075288999, guid: a1717f670b6a16249b64f1fa367220cb, type: 3}
+      propertyPath: passLevels.m_Name
+      value: Pass Levels
+      objectReference: {fileID: 0}
+    - target: {fileID: 7132460762075288999, guid: a1717f670b6a16249b64f1fa367220cb, type: 3}
+      propertyPath: passLevels.m_SingletonActionBindings.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7132460762075288999, guid: a1717f670b6a16249b64f1fa367220cb, type: 3}
+      propertyPath: passLevels.m_SingletonActionBindings.Array.data[0].m_Id
+      value: bb729157-0093-4a13-8b90-9596947e60bd
+      objectReference: {fileID: 0}
+    - target: {fileID: 7132460762075288999, guid: a1717f670b6a16249b64f1fa367220cb, type: 3}
+      propertyPath: passLevels.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <Keyboard>/l
+      objectReference: {fileID: 0}
+    - target: {fileID: 7132460762075288999, guid: a1717f670b6a16249b64f1fa367220cb, type: 3}
+      propertyPath: passLevels.m_SingletonActionBindings.Array.data[0].m_Action
+      value: Pass Levels
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293855265015999049, guid: a1717f670b6a16249b64f1fa367220cb, type: 3}
+      propertyPath: passLevels.m_Name
+      value: Pass Levels
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
