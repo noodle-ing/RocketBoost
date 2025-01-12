@@ -3830,6 +3830,10 @@ PrefabInstance:
       value: 3.36
       objectReference: {fileID: 0}
     - target: {fileID: 7132460762075288999, guid: a1717f670b6a16249b64f1fa367220cb, type: 3}
+      propertyPath: crashAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 96eec8ea608e5604ebce6a103f9bb74d, type: 3}
+    - target: {fileID: 7132460762075288999, guid: a1717f670b6a16249b64f1fa367220cb, type: 3}
       propertyPath: passLevels.m_Name
       value: Pass Levels
       objectReference: {fileID: 0}
@@ -3849,6 +3853,10 @@ PrefabInstance:
       propertyPath: passLevels.m_SingletonActionBindings.Array.data[0].m_Action
       value: Pass Levels
       objectReference: {fileID: 0}
+    - target: {fileID: 7293855265015999049, guid: a1717f670b6a16249b64f1fa367220cb, type: 3}
+      propertyPath: crashAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 96eec8ea608e5604ebce6a103f9bb74d, type: 3}
     - target: {fileID: 7293855265015999049, guid: a1717f670b6a16249b64f1fa367220cb, type: 3}
       propertyPath: passLevels.m_Name
       value: Pass Levels

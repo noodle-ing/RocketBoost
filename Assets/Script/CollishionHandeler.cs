@@ -75,7 +75,7 @@ namespace UnityEngine.SceneManagement
             crashAudioSource.PlayOneShot(crashAudio); //comment 
             crashParticle.Play();
             StopControl(isContrilable);
-            Invoke("ReloadLevel", 0.4f);
+            Invoke("ReloadLevel", 0.9f);
         }
         void DelayBeforeNextLvl(float deleyTime)
         {
