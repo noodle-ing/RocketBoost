@@ -82,6 +82,7 @@ public class Movement : MonoBehaviour
     void Thrust()
     {
         rb.AddRelativeForce(Vector3.up * trustStrenght * Time.fixedDeltaTime);
+        
         if (!flyAudio.isPlaying)
         {
             flyAudio.PlayOneShot(mainEngine);
@@ -101,11 +102,11 @@ public class Movement : MonoBehaviour
     void Rotation()
     {
         float rotationInput = rotation.ReadValue<float>();
-        if (rotationInput < 0)
+        if (rotationInput < 0f)
         {
             LeftRotation();
         }
-        else if (rotationInput > 0)
+        else if (rotationInput > 0f)
         {
             RightRotation();
         }
