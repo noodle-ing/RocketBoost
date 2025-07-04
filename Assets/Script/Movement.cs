@@ -101,7 +101,7 @@ public class Movement : MonoBehaviour
 
     void Rotation()
     {
-        float rotationInput = rotation.ReadValue<float>();
+         float rotationInput = Input.GetAxis("Horizontal");
         if (rotationInput < 0f)
         {
             LeftRotation();
